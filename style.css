@@ -57,7 +57,6 @@ h1 {
   margin: auto;
 }
 .page {
-  display: grid;
   background: var(--color-5);
   width: 100%;
   margin: auto;
@@ -89,11 +88,14 @@ h1 {
 #card1, #card2 {
   display: none;
 }
-.linha1 {
-  grid-area: linha1;
+.col1 {
+  grid-area: col1;
 }
-.linha2 {
-  grid-area: linha2;
+.col2 {
+  grid-area: col2;
+}
+.col3 {
+  grid-area: col3;
 }
 h2 {
   font-family: var(--ff-heading);
@@ -112,7 +114,7 @@ h2 {
   right: 1.6rem;
   animation: topdown 700ms;
 }
-footer {
+p#footer {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -120,14 +122,14 @@ footer {
   line-height: 2.8rem;
   text-align: center;
   color: #4A4E69;
-  width: 38.4rem;
-  margin: auto;
+  width: 70vw;
   padding-bottom: 2rem;
+  margin: auto;
   background: var(--color-5);
-  grid-area: footer;
+  grid-area: pfooter;
   display: none;
 }
-footer span {
+p#footer span {
   font-weight: bold;
 }
 @keyframes topdown {
@@ -183,10 +185,8 @@ footer span {
     margin: auto;
   }
   main {
-    display: grid;
-    width: 70vw;
+    max-width: 70vw;
     height: 100vh;
-    grid-template-areas:'linha1 linha2';
   }
   main p {
     display: none;
@@ -194,8 +194,33 @@ footer span {
   h2 {
     display: none;
   }
-  footer {
-    
+  .page {
+    width: 70vw;
+  }
+  #card1, #card2 {
+    display: flex;
+  }
+  .conteudo {
+    height: 90vh;
+    max-width: 70vw;
+    display: inline-flex;
+    grid-template-areas: 'col1' 'col2' 'col3';
+    align-items: center;
+  }
+  .conteudo img {
+    width: 12rem;
+  }
+  .col1, .col2, .col3 {
+    display: block;
+    height: 90vh;
+    max-width: 23.33vw;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  p#footer {
+    display: block;
+    height: 10vh;
+    padding: 0px;
   }
 }
 
