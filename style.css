@@ -14,10 +14,11 @@
   --color-5: #EFF1FF;
   --color-6: #FEEAFA;
 }
+/* MOBILE FIRST */
 body {
   font-family: var(--ff-body);
   font-size: 1.6rem;
-  max-width: 38.4rem;
+  width: 100%;
   margin: auto;
   text-align: center;
   background: var(--color-4);
@@ -25,11 +26,18 @@ body {
 header {
   height: 27.9rem;
   background: var(--color-2);
+  grid-area: header;
 }
 header img {
   width: 14rem;
   height: 14rem;
   margin: 3.2rem auto;
+}
+header p {
+  display: none;
+}
+main {
+  grid-area: main;
 }
 .destaque {
   width: 100%;
@@ -49,8 +57,9 @@ h1 {
   margin: auto;
 }
 .page {
+  display: grid;
   background: var(--color-5);
-  max-width: 100%;
+  width: 100%;
   margin: auto;
 }
 .conteudo {
@@ -58,7 +67,7 @@ h1 {
   max-width: 32.4rem;
   margin: auto;
 }
-p {
+.page p {
   padding-top: 1.4rem;
   padding-bottom: 6.4rem;
   font-family: var(--ff-body);
@@ -75,6 +84,16 @@ p {
 }
 .card {
   position: relative;
+  grid-area: card;
+}
+#card1, #card2 {
+  display: none;
+}
+.linha1 {
+  grid-area: linha1;
+}
+.linha2 {
+  grid-area: linha2;
 }
 h2 {
   font-family: var(--ff-heading);
@@ -92,6 +111,24 @@ h2 {
   top: 1.6rem;
   right: 1.6rem;
   animation: topdown 700ms;
+}
+footer {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  color: #4A4E69;
+  width: 38.4rem;
+  margin: auto;
+  padding-bottom: 2rem;
+  background: var(--color-5);
+  grid-area: footer;
+  display: none;
+}
+footer span {
+  font-weight: bold;
 }
 @keyframes topdown {
   0% {
@@ -113,5 +150,54 @@ h2 {
     opacity: 1;
   }
 }
+/* DESKTOP */
+@media (min-width:700px) {
+  body {
+    display: grid;
+    grid-template-areas:
+    'header main';
+  }
+  header {
+    width: 30vw;
+    height: 100vh;
+  }
+  header img {
+    width: 10rem;
+    height: 10rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .destaque {
+    height: 3rem;
+  }
+  header p {
+    width: 80%;
+    padding-top: 3rem;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    margin: auto;
+  }
+  main {
+    display: grid;
+    width: 70vw;
+    height: 100vh;
+    grid-template-areas:'linha1 linha2';
+  }
+  main p {
+    display: none;
+  }
+  h2 {
+    display: none;
+  }
+  footer {
+    
+  }
+}
+
 
 
