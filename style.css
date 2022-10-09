@@ -152,8 +152,8 @@ p#footer span {
     opacity: 1;
   }
 }
-/* DESKTOP */
-@media (min-width:700px) {
+/* DESKTOP - 828px para não sobrepor uma imagem na outra*/
+@media (min-width:828px) {
   body {
     display: grid;
     grid-template-areas:
